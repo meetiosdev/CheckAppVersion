@@ -13,6 +13,7 @@
 		4A83EB582A4AE02F00E304ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83EB562A4AE02F00E304ED /* Main.storyboard */; };
 		4A83EB5A2A4AE03100E304ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A83EB592A4AE03100E304ED /* Assets.xcassets */; };
 		4A83EB5D2A4AE03100E304ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83EB5B2A4AE03100E304ED /* LaunchScreen.storyboard */; };
+		4A83EB652A4AE06400E304ED /* AppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83EB642A4AE06400E304ED /* AppVersion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		4A83EB592A4AE03100E304ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A83EB5C2A4AE03100E304ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A83EB5E2A4AE03100E304ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A83EB642A4AE06400E304ED /* AppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppVersion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		4A83EB4F2A4AE02F00E304ED /* CheckAppVersion */ = {
 			isa = PBXGroup;
 			children = (
+				4A83EB662A4AE06A00E304ED /* VersionCheck */,
 				4A83EB502A4AE02F00E304ED /* AppDelegate.swift */,
 				4A83EB522A4AE02F00E304ED /* SceneDelegate.swift */,
 				4A83EB542A4AE02F00E304ED /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				4A83EB5E2A4AE03100E304ED /* Info.plist */,
 			);
 			path = CheckAppVersion;
+			sourceTree = "<group>";
+		};
+		4A83EB662A4AE06A00E304ED /* VersionCheck */ = {
+			isa = PBXGroup;
+			children = (
+				4A83EB642A4AE06400E304ED /* AppVersion.swift */,
+			);
+			path = VersionCheck;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			files = (
 				4A83EB552A4AE02F00E304ED /* ViewController.swift in Sources */,
 				4A83EB512A4AE02F00E304ED /* AppDelegate.swift in Sources */,
+				4A83EB652A4AE06400E304ED /* AppVersion.swift in Sources */,
 				4A83EB532A4AE02F00E304ED /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
