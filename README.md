@@ -3,12 +3,19 @@ AppVersion
 AppVersion is a Swift utility that allows you to easily check for updates of your iOS application and prompt users to update to the latest version for an enhanced user experience.
 
 Features
+
 🔄 Seamlessly checks for updates by comparing the version on the App Store with the currently installed version.
+
 ⚡️ Simple integration with just a single line of code.
+
 💪 Control the update behavior with the option to force users to update or provide the option to cancel.
+
 🚀 Optimized and memory-efficient implementation.
+
 🌟 Interactive and customizable alert presentation.
+
 📲 Deep links users to the App Store for convenient updates.
+
 
 How to Use
 To check for updates and prompt users to update, simply call the checkForUpdate method with the desired force update option.
