@@ -13,7 +13,7 @@ Features
 How to Use
 To check for updates and prompt users to update, simply call the checkForUpdate method with the desired force update option.
 
-Force Update: Displays an alert to users with no option to cancel. Users are forced to update.
+**Force Update**: Displays an alert to users with no option to cancel. Users are forced to update.
 
 ```
 AppVersion.checkForUpdate(forceUpdate: true)
