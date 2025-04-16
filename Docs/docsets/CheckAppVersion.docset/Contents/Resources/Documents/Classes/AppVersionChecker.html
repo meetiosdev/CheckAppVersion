@@ -17,7 +17,7 @@
     <a title="AppVersionChecker Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CheckAppVersion 1.0.0 Docs</a> (30% documented)</p>
+        <p><a href="../index.html">CheckAppVersion 1.0.0 Docs</a> (94% documented)</p>
         <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -146,7 +146,7 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>A class responsible for checking the app version against the App Store and notifying users about updates.</p>
 
           </section>
           <section class="section task-group-section">
@@ -165,7 +165,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The bundle from which the app version is read.</p>
 
                       </div>
                       <div class="declaration">
@@ -192,7 +192,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The session used for making the App Store lookup request.</p>
 
                       </div>
                       <div class="declaration">
@@ -219,7 +219,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The notifier responsible for presenting the update alert.</p>
 
                       </div>
                       <div class="declaration">
@@ -246,7 +246,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Initializes a new <code>AppVersionChecker</code> instance.</p>
 
                       </div>
                       <div class="declaration">
@@ -260,6 +260,49 @@
 <span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bundle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The app&rsquo;s bundle (default: <code>.main</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>session</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The network session used for fetching data (default: <code>.shared</code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>notifier</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The notifier used to display alerts (default: <code><a href="../Classes/DefaultAppUpdateNotifier.html">DefaultAppUpdateNotifier</a></code>).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -277,7 +320,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Checks for an app update by comparing the installed version with the App Store version.</p>
 
                       </div>
                       <div class="declaration">
@@ -287,6 +330,25 @@
                           <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">checkForAppUpdate</span><span class="p">(</span><span class="nv">forceUpdate</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>forceUpdate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If <code>true</code>, the user will be forced to update. If <code>false</code>, the user has the option to cancel the update.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -307,7 +369,12 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Fetches the latest version of the app from the App Store.</p>
+<div class="aside aside-throws">
+    <p class="aside-title">Throws</p>
+    An error if the app information cannot be fetched or parsed.
+
+</div>
 
                       </div>
                       <div class="declaration">
@@ -317,6 +384,10 @@
                           <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">fetchLatestAppInfo</span><span class="p">()</span> <span class="k">async</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/AppStoreAppInfo.html">AppStoreAppInfo</a></span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The app information retrieved from the App Store.</p>
                       </div>
                     </section>
                   </div>
@@ -334,7 +405,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Compares the current app version with the version available on the App Store.</p>
 
                       </div>
                       <div class="declaration">
@@ -344,6 +415,29 @@
                           <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">isNewerVersionAvailable</span><span class="p">(</span><span class="nv">storeVersion</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>storeVersion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The version of the app available on the App Store.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code>true</code> if the current version is older than the version on the App Store.</p>
                       </div>
                     </section>
                   </div>

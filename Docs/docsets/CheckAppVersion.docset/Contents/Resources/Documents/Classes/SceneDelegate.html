@@ -17,7 +17,7 @@
     <a title="SceneDelegate Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CheckAppVersion 1.0.0 Docs</a> (30% documented)</p>
+        <p><a href="../index.html">CheckAppVersion 1.0.0 Docs</a> (94% documented)</p>
         <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -147,7 +147,8 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p>The <code>SceneDelegate</code> class is responsible for managing the life cycle of the app&rsquo;s scenes.
+It handles tasks such as setting up the window, responding to scene transitions, and managing resources.</p>
 
           </section>
           <section class="section task-group-section">
@@ -166,7 +167,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The window of the app&rsquo;s user interface.
+This is where the root view controller and its view hierarchy are managed.</p>
 
                       </div>
                       <div class="declaration">
@@ -181,6 +183,19 @@
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Scene%20Lifecycle"></a>
+                <a name="//apple_ref/swift/Section/Scene Lifecycle" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Scene%20Lifecycle"></a>
+                  <h3 class="section-name"><span>Scene Lifecycle</span>
+</h3>
+                </div>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -194,7 +209,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called when a new scene session is being created.
+Use this method to optionally configure and attach the UIWindow <code><a href="../Classes/SceneDelegate.html#/c:@M@CheckAppVersion@objc(cs)SceneDelegate(py)window">window</a></code> to the provided UIWindowScene <code>scene</code>.
+If you&rsquo;re using a storyboard, the window property will automatically be initialized and attached to the scene.</p>
 
                       </div>
                       <div class="declaration">
@@ -205,6 +222,49 @@
 <span class="kd">func</span> <span class="nf">scene</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">,</span> <span class="n">willConnectTo</span> <span class="nv">session</span><span class="p">:</span> <span class="kt">UISceneSession</span><span class="p">,</span> <span class="n">options</span> <span class="nv">connectionOptions</span><span class="p">:</span> <span class="kt">UIScene</span><span class="o">.</span><span class="kt">ConnectionOptions</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scene</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scene being connected to the session.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>session</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The session that defines the context for the scene.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>connectionOptions</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The options for configuring the scene.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -222,7 +282,9 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called as the scene is being released by the system.
+This method is triggered shortly after the scene enters the background, or when its session is discarded.
+Use this to release any resources associated with the scene that can be re-created the next time the scene connects.</p>
 
                       </div>
                       <div class="declaration">
@@ -233,6 +295,25 @@
 <span class="kd">func</span> <span class="nf">sceneDidDisconnect</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scene</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scene that is being disconnected.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -250,7 +331,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called when the scene moves from an inactive state to an active state.
+Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.</p>
 
                       </div>
                       <div class="declaration">
@@ -261,6 +343,25 @@
 <span class="kd">func</span> <span class="nf">sceneDidBecomeActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scene</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scene that is becoming active.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -278,7 +379,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called when the scene is about to move from an active state to an inactive state.
+This may occur due to temporary interruptions such as an incoming phone call.</p>
 
                       </div>
                       <div class="declaration">
@@ -289,6 +391,25 @@
 <span class="kd">func</span> <span class="nf">sceneWillResignActive</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scene</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scene that will resign activity.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -306,7 +427,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called as the scene transitions from the background to the foreground.
+Use this method to undo changes made when entering the background.</p>
 
                       </div>
                       <div class="declaration">
@@ -317,6 +439,25 @@
 <span class="kd">func</span> <span class="nf">sceneWillEnterForeground</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scene</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scene transitioning from the background to the foreground.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
@@ -334,7 +475,8 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called as the scene transitions from the foreground to the background.
+Use this method to save data, release shared resources, and store state information to restore the scene later.</p>
 
                       </div>
                       <div class="declaration">
@@ -345,6 +487,25 @@
 <span class="kd">func</span> <span class="nf">sceneDidEnterBackground</span><span class="p">(</span><span class="n">_</span> <span class="nv">scene</span><span class="p">:</span> <span class="kt">UIScene</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>scene</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The scene transitioning to the background.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

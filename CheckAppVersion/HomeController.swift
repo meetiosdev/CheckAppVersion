@@ -14,11 +14,19 @@ class HomeController: UIViewController {
 
     // MARK: - Lifecycle
 
+    /// Called when the view is loaded into memory.
+    ///
+    /// Override this method to set up any additional UI components or perform initial setup.
     override func viewDidLoad() {
         super.viewDidLoad()
         // Setup any additional UI here if needed
     }
 
+    /// Called when the view has appeared on screen.
+    ///
+    /// This method triggers the check for app updates immediately when the view appears.
+    ///
+    /// - Parameter animated: A boolean indicating whether the view appearance was animated.
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

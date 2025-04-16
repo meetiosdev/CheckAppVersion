@@ -8,31 +8,59 @@ import UIKit
 
 // MARK: - App Store API Response Models
 
+/// Represents the response from the App Store API for a version lookup.
 struct AppStoreLookupResponse: Codable {
+    /// The number of results returned by the App Store lookup.
     let resultCount: Int
+    
+    /// The list of results containing the app information.
     let results: [AppStoreAppInfo]
 }
 
+/// Contains the metadata of the app fetched from the App Store.
 struct AppStoreAppInfo: Codable {
+    /// The version of the app available on the App Store.
     let version: String
+    
+    /// The URL to the app's page on the App Store.
     let trackViewUrl: String
+    
+    /// The name of the app.
     let trackName: String
 }
 
 // MARK: - Update Notifier Protocol
 
+/// Protocol that defines a method for notifying users about app updates.
 protocol AppUpdateNotifier: AnyObject {
+    /// Notify the user about an available update.
+    ///
+    /// - Parameters:
+    ///   - appInfo: Information about the latest version of the app.
+    ///   - forceUpdate: Whether the user should be forced to update or not.
     func notifyUserAboutUpdate(appInfo: AppStoreAppInfo, forceUpdate: Bool)
 }
 
 // MARK: - Version Checker
 
+/// A class responsible for checking the app version against the App Store and notifying users about updates.
 final class AppVersionChecker {
     
+    /// The bundle from which the app version is read.
     private let bundle: Bundle
+    
+    /// The session used for making the App Store lookup request.
     private let session: URLSession
+    
+    /// The notifier responsible for presenting the update alert.
     private let notifier: AppUpdateNotifier
 
+    /// Initializes a new `AppVersionChecker` instance.
+    ///
+    /// - Parameters:
+    ///   - bundle: The app's bundle (default: `.main`).
+    ///   - session: The network session used for fetching data (default: `.shared`).
+    ///   - notifier: The notifier used to display alerts (default: `DefaultAppUpdateNotifier`).
     init(
         bundle: Bundle = .main,
         session: URLSession = .shared,
@@ -43,6 +71,9 @@ final class AppVersionChecker {
         self.notifier = notifier
     }
 
+    /// Checks for an app update by comparing the installed version with the App Store version.
+    ///
+    /// - Parameter forceUpdate: If `true`, the user will be forced to update. If `false`, the user has the option to cancel the update.
     func checkForAppUpdate(forceUpdate: Bool) {
         Task {
             do {
@@ -64,6 +95,10 @@ final class AppVersionChecker {
         }
     }
 
+    /// Fetches the latest version of the app from the App Store.
+    ///
+    /// - Returns: The app information retrieved from the App Store.
+    /// - Throws: An error if the app information cannot be fetched or parsed.
     private func fetchLatestAppInfo() async throws -> AppStoreAppInfo {
         guard let bundleId = bundle.bundleIdentifier,
               let url = URL(string: "https://itunes.apple.com/lookup?bundleId=\(bundleId)") else {
@@ -86,6 +121,10 @@ final class AppVersionChecker {
         return appInfo
     }
 
+    /// Compares the current app version with the version available on the App Store.
+    ///
+    /// - Parameter storeVersion: The version of the app available on the App Store.
+    /// - Returns: `true` if the current version is older than the version on the App Store.
     private func isNewerVersionAvailable(storeVersion: String) -> Bool {
         guard let currentVersion = bundle.infoDictionary?["CFBundleShortVersionString"] as? String else {
             print("⚠️ Couldn't read current version")
@@ -100,7 +139,14 @@ final class AppVersionChecker {
 
 // MARK: - Default Notifier
 
+/// A default implementation of the `AppUpdateNotifier` protocol that presents an update alert using `UIAlertController`.
 final class DefaultAppUpdateNotifier: AppUpdateNotifier {
+    
+    /// Presents an alert notifying the user about an available update.
+    ///
+    /// - Parameters:
+    ///   - appInfo: The app information containing the latest version and app name.
+    ///   - forceUpdate: Whether the update is forced or optional.
     func notifyUserAboutUpdate(appInfo: AppStoreAppInfo, forceUpdate: Bool) {
         let alert = UIAlertController(
             title: "Update Available",
@@ -127,4 +173,3 @@ final class DefaultAppUpdateNotifier: AppUpdateNotifier {
         }
     }
 }
-

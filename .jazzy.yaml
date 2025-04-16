@@ -10,12 +10,12 @@ min_acl: private  # ✅ Include public, internal, fileprivate, and private
 # Paths
 source_directory: .
 output: Docs
-xcodeproj: CheckAppVersion.xcodeproj
-module_name: CheckAppVersion
 
 # Customization
 theme: apple
 clean: true
+
+# xcodebuild arguments
 build_tool_arguments:
   - -scheme
   - CheckAppVersion
@@ -37,4 +37,3 @@ exclude:
 # Misc
 swift_build_tool: xcodebuild
 use_safe_filenames: true
-

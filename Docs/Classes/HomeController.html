@@ -17,7 +17,7 @@
     <a title="HomeController Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">CheckAppVersion 1.0.0 Docs</a> (30% documented)</p>
+        <p><a href="../index.html">CheckAppVersion 1.0.0 Docs</a> (94% documented)</p>
         <div class="header-right">
           <form role="search" action="../search.json">
             <input type="text" placeholder="Search documentation" data-typeahead>
@@ -176,7 +176,9 @@ This controller checks for app updates as soon as it&rsquo;s presented.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called when the view is loaded into memory.</p>
+
+<p>Override this method to set up any additional UI components or perform initial setup.</p>
 
                       </div>
                       <div class="declaration">
@@ -204,7 +206,9 @@ This controller checks for app updates as soon as it&rsquo;s presented.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Called when the view has appeared on screen.</p>
+
+<p>This method triggers the check for app updates immediately when the view appears.</p>
 
                       </div>
                       <div class="declaration">
@@ -215,6 +219,25 @@ This controller checks for app updates as soon as it&rsquo;s presented.</p>
 <span class="k">override</span> <span class="kd">func</span> <span class="nf">viewDidAppear</span><span class="p">(</span><span class="n">_</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A boolean indicating whether the view appearance was animated.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>
