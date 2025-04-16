@@ -1,0 +1,40 @@
+# .jazzy.yaml
+
+# Project information
+author: Swarajmeet Singh
+author_url: https://github.com/swarajmeet
+module_version: 1.0.0
+module: CheckAppVersion
+min_acl: private  # ✅ Include public, internal, fileprivate, and private
+
+# Paths
+source_directory: .
+output: Docs
+xcodeproj: CheckAppVersion.xcodeproj
+module_name: CheckAppVersion
+
+# Customization
+theme: apple
+clean: true
+build_tool_arguments:
+  - -scheme
+  - CheckAppVersion
+  - -configuration
+  - Release
+  - -sdk
+  - iphoneos
+
+# Documentation customization
+documentation:
+  - README.md
+
+# Exclude files or directories
+exclude:
+  - Tests
+  - Example
+  - CheckAppVersionTests
+
+# Misc
+swift_build_tool: xcodebuild
+use_safe_filenames: true
+

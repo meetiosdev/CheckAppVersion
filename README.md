@@ -1,75 +1,43 @@
-# CheckAppVersion
-AppVersion
-AppVersion is a Swift utility that allows you to easily check for updates of your iOS application and prompt users to update to the latest version for an enhanced user experience.
+# 📲 AppVersion
 
-Features
+**AppVersion** is a Swift utility that makes it effortless to check for updates on the App Store and prompt users to install the latest version—ensuring your users always experience the best your app has to offer.
 
-🔄 Seamlessly checks for updates by comparing the version on the App Store with the currently installed version.
+---
 
-⚡️ Simple integration with just a single line of code.
+## ✨ Features
 
-💪 Control the update behavior with the option to force users to update or provide the option to cancel.
+- 🔄 **Automatic Update Detection**  
+  Compares the installed version with the App Store version using Apple’s Lookup API.
 
-🚀 Optimized and memory-efficient implementation.
+- ⚡️ **Simple Integration**  
+  Just one line of code to trigger an update check.
 
-🌟 Interactive and customizable alert presentation.
+- 💪 **Force or Optional Updates**  
+  Choose whether users can skip or must install the update.
 
-📲 Deep links users to the App Store for convenient updates.
+- 🚀 **Optimized & Lightweight**  
+  Built with async/await and UIKit alerts—no external dependencies.
 
+- 🌟 **Customizable Alert UI**  
+  Tailor the alert’s message, buttons, and appearance to fit your branding.
 
-How to Use
-To check for updates and prompt users to update, simply call the checkForUpdate method with the desired force update option.
+- 📲 **App Store Deep Linking**  
+  Redirects users to your app's App Store page for quick updating.
 
-**Force Update**: Displays an alert to users with no option to cancel. Users are forced to update.
+---
 
-```
-AppVersion.checkForUpdate(forceUpdate: true)
-```
+## 🛠️ How to Use
 
-Optional Update: Displays an alert to users with the option to cancel. Users can choose to update or dismiss the alert.
+### 1. Integrate the Utility
 
-```
-AppVersion.checkForUpdate(forceUpdate: false)
-```
-Make sure to call the update alert after setting the root view controller. This ensures that the alert is presented correctly without being dismissed when a new root view controller is set.
-```
-self.view.window?.rootViewController = rootvc
-AppVersion.checkForUpdate(forceUpdate: true)
-```
+Add the following files to your Xcode project:
 
-Customize the update alert presentation:
-✏️ Modify the alert title, message, and button labels to suit your app's branding and messaging.
-✨ Customize the alert's appearance using the provided UIAlertController methods.
-```
-private static func showUpdateAlert(forceUpdate: Bool, info: AppInfo) {
-    let alertController = UIAlertController(title: "📣 Update Available", message: "🆕 A new version(\(info.version)) of the \(info.trackName) is available. Please update to the latest version.", preferredStyle: .alert)
-    
-    // Update action
-    let updateAction = UIAlertAction(title: "📲 Update", style: .default) { (action) in
-        // Open App Store for update
-        if let url = URL(string: info.trackViewUrl) {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        }
-    }
-    alertController.addAction(updateAction)
-    
-    // Cancel action (only for optional update)
-    if !forceUpdate {
-        let cancelAction = UIAlertAction(title: "⛔️ Cancel", style: .cancel, handler: nil)
-        alertController.addAction(cancelAction)
-    }
+- `AppVersionChecker.swift`
+- `DefaultAppUpdateNotifier.swift` (optional, or use your own)
 
-    // Present the alert on the topmost view controller
-    if let topViewController = UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController?.topMostViewController() {
-        topViewController.present(alertController, animated: true, completion: nil)
-    }
-}
-```
-Contributing
-🤝 Contributions are welcome! If you have any ideas, suggestions, or bug fixes, please open an issue or submit a pull request.
+### 2. Check for Updates
 
-License
-📄 This project is licensed under the MIT License.
+#### 🔒 Force Update (no cancel option)
 
-Credits
-AppVersion is developed and maintained by Swarajmeet Singh.
+```swift
+AppVersionChecker().checkForAppUpdate(forceUpdate: true)
